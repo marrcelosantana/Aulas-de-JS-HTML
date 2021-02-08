@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora PVP </title>
+    <style>
+        body{
+            font: 14pt Helvetica;
+            background: #eec5ee;
+            
+        }
+        input{
+            font: normal 14pt Times;
+            width: 100px;
+            background-color: rgb(197, 197, 197);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Somando Valores</h1>
+    <input type="number" name = "txtn1" id = "txtn1"> +
+    <input type="number" name = "txtn2" id = "txtn2">
+    <input type="button" value="Somar" onclick= "somar()">
+    <div id = "res"> Resultado: </div>
+
+    <h1>Subtraindo Valores</h1>
+    <input type="number" id = "txtm1"> - 
+    <input type="number" id = "txtm2">
+    <input type="button" value ="Subtrair" onclick = "subtrair()">
+    <div id = "res2">Resultado:</div>
+
+    <h1>Multiplicando Valores</h1>
+    <input type="number" id = "txtc1"> *
+    <input type="number" id = "txtc2">
+    <input type="button" value ="Multiplicar" onclick = "multiplicar()">
+    <div id = "res3">Resultado:</div>
+
+    <h1>Dividindo Valores</h1>
+    <input type="number" id = "txta1"> /
+    <input type="number" id = "txta2">
+    <input type="button" value="Dividir" onclick= "dividir()">
+    <div id = "res4">Resultado:</div>
+
+    <h1>Potenciação</h1>
+    <input type="number" id = "txtp1"> ** 
+    <input type="number" id ="txtp2">
+    <input type="button" value = "Potência" onclick="potencializar()">
+    <div id = 'res5'>Resultado:</div>
+
+    <h1>Módulo</h1>
+    <input type="number" id = "txtr1"> %
+    <input type="number" id = "txtr2">
+    <input type="button" value = "Módulo" onclick="modular()">
+    <div id = 'res6'>Resultado:</div>
+
+    <h1>Conversão de Dólar para Real (Data: 08.02.2021)</h1>
+    <strong>$USD</strong> <input type="number" id = "dolar"> =>
+    <input type="button" value = "Converter" onclick = "converter()">
+    <div id = 'res7'>Valor convertido:</div>
+
+    <h1>Conversão de Euro para Real (Data: 08.02.2021)</h1>
+    <strong>€</strong> <input type="number" id = "real2"> =>
+    <input type="button" value = 'Converter' onclick="converter2()">
+    <div id = 'res8'>Valor convertido:</div>
+
+
+    <script>
+
+        /*var nome = window.prompt("Qual o seu nome?");
+        window.alert('É um prazer te conhecer ' + nome + '! Vamos fazer cálculos!!');*/
+
+        function somar(){
+            var tn1 = document.getElementById('txtn1');
+            var tn2 = document.getElementById ('txtn2');
+            var res = document.getElementById('res');
+            var n1 = Number(tn1.value);
+            var n2 = Number(tn2.value);
+            var soma = n1 + n2;
+
+            res.innerHTML = `Resultado: A soma é igual a <strong>${soma}</strong>!`;
+            
+        }
+        function subtrair(){
+            var tm1 = document.getElementById('txtm1');
+            var tm2 = document.getElementById('txtm2');
+            var res = document.getElementById('res2');
+            var m1 = Number(tm1.value);
+            var m2 = Number(tm2.value);
+            var sub = m1 - m2;
+
+            res2.innerHTML = `Resultado: A subtração é igual a <strong>${sub}</strong>!`;
+        }
+        function multiplicar(){
+            var tc1 = document.getElementById('txtc1');
+            var tc2 = document.getElementById('txtc2');
+            var res = document.getElementById('res3');
+            var c1 = Number(tc1.value);
+            var c2 = Number(tc2.value);
+            var mult = c1 * c2;
+
+            res3.innerHTML = `Resultado: A multiplicação é igual a <strong>${mult}</strong>!`;
+        }
+        function dividir(){
+            var ta1 = document.getElementById('txta1');
+            var ta2 = document.getElementById('txta2');
+            var res = document.getElementById('res4');
+            var a1 = Number(ta1.value);
+            var a2 = Number(ta2.value);
+            var div = a1 / a2;
+
+            res4.innerHTML = `Resultado: A divisão é igual a <strong>${div.toFixed(2)}</strong>!`;
+        }
+        function potencializar(){
+            var tp1 = document.getElementById('txtp1');
+            var tp2 = document.getElementById('txtp2');
+            var res = document.getElementById('res5');
+            var p1 = Number(tp1.value);
+            var p2 = Number(tp2.value);
+            var pot = p1 ** p2;
+            res.innerHTML = `Resultado: O valor é <strong>${pot}</strong>!`;
+
+        }
+        function modular(){
+            var tr1 = document.getElementById('txtr1');
+            var tr2 = document.getElementById('txtr2');
+            var res = document.querySelector('div#res6');
+            var r1 = Number(tr1.value);
+            var r2 = Number(tr2.value);
+            var modulo = r1 % r2;
+
+            res.innerHTML = `O resto da divisão é <strong>${modulo}</strong>!`;
+        }
+        function converter(){
+            var tn1 = document.getElementById('dolar');
+            var res = document.getElementById('res7');
+            var n1 = Number(tn1.value);
+            var conversao = n1 * 5.37;
+            
+            res.innerHTML = `O valor é ${conversao.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}!`;
+        }
+        function converter2(){
+            var tn1 = document.getElementById('real2');
+            var res = document.getElementById('res8');
+            var n1 = Number(tn1.value);
+            var conversao = n1 * 6.47;
+            
+            res.innerHTML = `O valor é ${conversao.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}!`;
+        }
+    
+    
+    
+    </script>
+
+</body>
+</html>
