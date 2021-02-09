@@ -14,16 +14,17 @@
 </body>
 
 <script>
+    var nome = window.prompt('Como você se chama?');
     function verificar(){
         var txt = document.querySelector('input#txt');
         var res = document.querySelector('div#res');
         var nac = (txt.value);
         res.innerHTML = `Seu país de origem é ${nac}!`;
         if(nac == 'Brasil' || nac == 'BRASIL' || nac == 'brasil' || nac == 'Brazil' || nac == 'brazil' || nac == 'BRAZIL'){
-            res.innerHTML = `<p>Você é <strong>BRASILEIRO!</strong></p>`;
+            res.innerHTML = `<p>${nome} é <strong>BRASILEIRO!</strong></p>`;
         }
         else{
-            res.innerHTML = `<p>Você é <strong>ESTRANGEIRO!</strong></p>`;
+            res.innerHTML = `<p>${nome} é <strong>ESTRANGEIRO!</strong></p>`;
         }
 
     }
