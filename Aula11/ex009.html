@@ -19,7 +19,7 @@
         var res = document.querySelector('div#res');
         var nac = (txt.value);
         res.innerHTML = `Seu país de origem é ${nac}!`;
-        if(nac == 'Brasil' || nac == 'BRASIL' || 'brasil' || 'Brazil' || 'brazil' || 'BRAZIL'){
+        if(nac == 'Brasil' || nac == 'BRASIL' || nac == 'brasil' || nac == 'Brazil' || nac == 'brazil' || nac == 'BRAZIL'){
             res.innerHTML = `<p>Você é <strong>BRASILEIRO!</strong></p>`;
         }
         else{
